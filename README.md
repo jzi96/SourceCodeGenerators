@@ -18,7 +18,7 @@ To enable the source code generators you have to change the project file.
 
 ## AutoNotifyGenerator
 
-Auto implemenation for [`INotifyPropertyChanged`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged). You only have to specify the field and mark the field with
+Auto implementation for [`INotifyPropertyChanged`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged). You only have to specify the field and mark the field with
 the attribute and generator will automatically generate the property and raise the event.
 
 ```csharp
@@ -82,9 +82,16 @@ Hook up the generator, nothing else to do.
 
 This generator shall generate enumerations based  on the definition of the xml-based
 FIX application dictionary. Usually used for QuickFix.
-The fields in the xml will be converted to an enum field and tag number. Additional enums
+The fields in the xml will be converted to an enum field and tag number.
+The name is base on the file name, e. g. `TT-FIX42.xml` becomes the enum `TTFIX42Tag`.
+
+![sample of generated Tag enum](resources/tag-sample.png)
+
+Additional enums
 will be generated for the fix field enums. Because the value can be char instead of int, the
 enum value is the char code.
+
+![Sample of a generate FIX enum values](resources/enum-sample.png)
 
 ### Usage
 
