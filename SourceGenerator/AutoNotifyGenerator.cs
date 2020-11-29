@@ -37,9 +37,7 @@ namespace {ns}
 
         public void Execute(GeneratorExecutionContext context)
         {
-
-            string ns = context.Compilation.Assembly.NamespaceNames.FirstOrDefault(c => !string.IsNullOrWhiteSpace(c));
-            ns = ns ?? "AutoNotify";
+            string ns = Helper.GetNamespace(context, "AutoNotify");
 
             // add the attribute text
             string snippet = attributeText.Replace("{ns}", ns);

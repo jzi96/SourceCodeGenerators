@@ -125,8 +125,7 @@ namespace janzi.Projects.SourceCodeGenerators
 
         static IEnumerable<(string namespaceName, bool cacheObjects, AdditionalText file)> GetLoadOptions(GeneratorExecutionContext context)
         {
-            string namespaceName = context.Compilation.Assembly.NamespaceNames.FirstOrDefault(c => !string.IsNullOrWhiteSpace(c));
-            namespaceName = namespaceName ?? "Fix";
+            string namespaceName = Helper.GetNamespace(context, "Fix");
 
 
             foreach (AdditionalText file in context.AdditionalFiles)

@@ -21,6 +21,10 @@ To enable the source code generators you have to change the project file.
 Auto implementation for [`INotifyPropertyChanged`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged). You only have to specify the field and mark the field with
 the attribute and generator will automatically generate the property and raise the event.
 
+I notice a strange behavior, while using the generator in a wpf UI project. The compilation failed, 
+even all the setup and code was fine. Splitting in UI and ViewModel/Service project worked around this.
+So you might get issues an WPF projects.
+
 ```csharp
 public partial class ExampleViewModel
 {
