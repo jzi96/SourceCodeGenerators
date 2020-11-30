@@ -19,12 +19,20 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.301
+        dotnet-version: 5.0.x
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore /p:VersionPrefix=$VERSIONNR
+      run: dotnet build ./SourceGeneratorTemplate.sln --configuration Release --no-restore -p:VersionPrefix=$VERSIONNR
     #- name: Test
     #  run: dotnet test --no-restore --verbosity normal
     - name: Pack
-      run: dotnet pack --configuration Release --no-restore /p:VersionPrefix=$VERSIONNR
+      run: dotnet pack SourceGenerator/SourceGenerator.csproj --configuration Release --no-restore -p:VersionPrefix=$VERSIONNR -p:PackageVersion=$VERSIONNR
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.1
+      with:
+        # Artifact name
+        name: package
+        # A file, directory or wildcard pattern that describes what to upload
+        path: SourceGenerator/bin/Release/*
