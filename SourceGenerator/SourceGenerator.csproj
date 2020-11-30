@@ -8,6 +8,23 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>JziSourceLoggers</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>Jan Zieschang</Authors>
+    <Company>Private</Company>
+    <PackageTags>Source Code Generatory;Zieschang;Code;Generator;Analyzer;FIX;INotify;ViewModel</PackageTags>
+    <Description>
+      This is a set of Source Code Generators to be used/referenced in other projects. There are 
+      currently 2 generators implemented.
+
+      * AutoNotifyGenerators (MS Sample modified) - Auto implement INotifyProperyChange for fields and class.
+      * FixXmlEnumConverter - generate enums from FIX xml definition
+
+      Please see https://github.com/jzi96/SourceCodeGenerators/blob/main/README.md for more details. 
+    </Description>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.1">
       <PrivateAssets>all</PrivateAssets>
