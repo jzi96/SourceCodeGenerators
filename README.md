@@ -2,6 +2,7 @@
 
 This repository contains a set of Code generators, see below.
 
+![.NET Core](https://github.com/jzi96/SourceCodeGenerators/workflows/.NET%20Core/badge.svg?branch=main)
 
 ## General Usage
 
